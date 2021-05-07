@@ -1,0 +1,19 @@
+{
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3308,
+  "username": "root",
+  "password": "dockermd",
+  "database": "typeormCourseProject1",
+  "entities": [
+    "./src/models/*.ts"
+  ],
+
+  "migrations": [
+    "./src/database/migrations/*.ts"
+  ],
+  
+  "cli": {
+    "migrationsDir": "./src/database/migrations/"
+  }
+}
