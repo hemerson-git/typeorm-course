@@ -1,21 +1,44 @@
-import {MigrationInterface, QueryRunner, Table} from "typeorm";
+import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class createClass1620407852495 implements MigrationInterface {
+export class CreateClass1620407852495 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.createTable( new Table({
+        await queryRunner.createTable(new Table({
             name: 'classes',
             columns: [
                 {
                     name: 'id',
-                    type: 'uuid',
+                    type: 'varchar',
+                    isPrimary: true,
                     generationStrategy: 'uuid'
+                },
+
+                {
+                    name: 'name',
+                    type: 'varchar'
+                },
+
+                {
+                    name: 'duration',
+                    type: 'integer'
+                },
+
+                {
+                    name: 'created_at',
+                    type: 'timestamp',
+                    default: 'now()'
+                },
+
+                {
+                    name: 'last_update',
+                    type: 'timestamp',
+                    default: 'now()'
                 }
             ]
         }))
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.dropTable('classes');
     }
-
 }

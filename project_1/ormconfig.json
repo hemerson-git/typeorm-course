@@ -1,10 +1,10 @@
 {
   "type": "mysql",
   "host": "localhost",
-  "port": 3308,
-  "username": "root",
-  "password": "dockermd",
-  "database": "typeormCourseProject1",
+  "port": 3306,
+  "username": "developer",
+  "password": "develpment",
+  "database": "typeormCourse",
   "entities": [
     "./src/models/*.ts"
   ],
