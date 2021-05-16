@@ -30,7 +30,7 @@ export class CreateClass1620407852495 implements MigrationInterface {
                 },
 
                 {
-                    name: 'last_update',
+                    name: 'updated_at',
                     type: 'timestamp',
                     default: 'now()'
                 }
